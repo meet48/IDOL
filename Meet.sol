@@ -25,6 +25,16 @@ contract Meet is ERC20, ERC20Burnable, Ownable {
     {
         maxSupply = 4800000000 * 10 ** 18;
 
+        require(isValidAddress(initialOwner), "Invalid initial owner address");
+        require(isValidAddress(strategicPartnerFunding), "Invalid strategic partner funding address");
+        require(isValidAddress(privateFunding), "Invalid private funding address");
+        require(isValidAddress(publicSale), "Invalid public sale address");
+        require(isValidAddress(ecologyFoundation), "Invalid ecology foundation address");
+        require(isValidAddress(community), "Invalid community address");
+        require(isValidAddress(liquidity), "Invalid liquidity address");
+        require(isValidAddress(team), "Invalid team address");
+        require(isValidAddress(advisor), "Invalid advisor address");
+
         _mint(strategicPartnerFunding, maxSupply * 2 / 100);
         _mint(privateFunding, maxSupply * 5 / 100);
         _mint(publicSale, maxSupply * 3 / 100);
@@ -35,5 +45,8 @@ contract Meet is ERC20, ERC20Burnable, Ownable {
         _mint(advisor, maxSupply * 2 / 100);
     }
 
+    function isValidAddress(address _address) internal pure returns (bool) {
+        return _address != address(0);
+    }
 
 }

@@ -14,7 +14,9 @@ contract Vesting is VestingWallet{
                 startTimestamp,
                 durationSeconds
         ){
-
+        require(beneficiaryAddress != address(0), "Beneficiary address cannot be zero address");
+        require(startTimestamp >= block.timestamp, "Start timestamp cannot be in the past");
+        require(durationSeconds > 0, "Duration must be greater than zero");
     }
 
     function renounceOwnership() public override onlyOwner {

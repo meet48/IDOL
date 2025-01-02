@@ -4,13 +4,11 @@ pragma solidity 0.8.23;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract Meet is ERC20, ERC20Burnable, Ownable {
+contract Meet is ERC20, ERC20Burnable {
     uint256 public maxSupply;
 
     constructor(
-        address initialOwner,
         address strategicPartnerFunding,
         address privateFunding,
         address publicSale,
@@ -21,11 +19,9 @@ contract Meet is ERC20, ERC20Burnable, Ownable {
         address advisor
         )
         ERC20("MEET48 Token", "IDOL")
-        Ownable(initialOwner)
     {
         maxSupply = 4800000000 * 10 ** 18;
 
-        require(isValidAddress(initialOwner), "Invalid initial owner address");
         require(isValidAddress(strategicPartnerFunding), "Invalid strategic partner funding address");
         require(isValidAddress(privateFunding), "Invalid private funding address");
         require(isValidAddress(publicSale), "Invalid public sale address");

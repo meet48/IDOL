@@ -5,7 +5,7 @@ pragma solidity 0.8.23;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract Meet is ERC20 {
-    uint256 public maxSupply;
+    uint256 public immutable maxSupply;
 
     constructor(
         address strategicPartnerFunding,
@@ -18,7 +18,7 @@ contract Meet is ERC20 {
         address advisor,
         address airdrop
         )
-        ERC20("MEET48 Token", "IDOL")        
+        ERC20("MEET48 Token", "IDOL")
     {
         maxSupply = 4800000000 * 10 ** 18;
 
@@ -32,7 +32,5 @@ contract Meet is ERC20 {
         _mint(advisor, maxSupply * 2 / 100);
         _mint(airdrop, maxSupply * 5 / 100);
     }
-
-
 
 }

@@ -22,15 +22,15 @@ contract Meet is ERC20 {
     {
         maxSupply = 4800000000 * 10 ** 18;
 
-        _mint(strategicPartnerFunding, maxSupply * 4 / 100);
-        _mint(privateFunding, maxSupply * 3 / 100);
-        _mint(publicSale, maxSupply * 3 / 100);
-        _mint(ecologyFoundation, maxSupply * 20 / 100);
-        _mint(community, maxSupply * 45 / 100);
-        _mint(liquidity, maxSupply * 3 / 100);
-        _mint(team, maxSupply * 15 / 100);
-        _mint(advisor, maxSupply * 2 / 100);
-        _mint(airdrop, maxSupply * 5 / 100);
+        _mint(strategicPartnerFunding, maxSupply * 40 / 1000);
+        _mint(privateFunding, maxSupply * 30 / 1000);
+        _mint(publicSale, maxSupply * 5 / 1000);
+        _mint(ecologyFoundation, maxSupply * 200 / 1000);
+        _mint(community, maxSupply * 465 / 1000);
+        _mint(liquidity, maxSupply * 30 / 1000);
+        _mint(team, maxSupply * 150 / 1000);
+        _mint(advisor, maxSupply * 20 / 1000);
+        _mint(airdrop, maxSupply * 60 / 1000);
     }
 
 }
